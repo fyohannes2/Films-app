@@ -1,11 +1,11 @@
-# "YourStream": Your Movie Database.
+# "YourStream": App to personalize your movie database.
 
-This project is example for CRUD in ReactJS using Bootstrap 4 for framework css and design UI. On this project using axios for using http request to API. It uses [The MovieDB Api](https://www.themoviedb.org/documentation/api) to search for movies and display results.
+Next.js is an open source React front-end development web framework that enables functionality such as server-side rendering and generating static websites for React-based web applications.
+This project is example for CRUD in ReactJS using Bootstrap 4 for framework css and design UI. On this project used axios for using http request to API. It uses [The MovieDB Api](https://www.themoviedb.org/documentation/api) to search for movies and display results.
 
 
+# Wireframe 
 
-
-# Wireframe and Trello...
 
 <img width="948" alt="Screen Shot 2022-07-14 at 12 21 27 PM" src="https://user-images.githubusercontent.com/107531552/179030855-a4a4159e-3d5c-47ab-88bc-bab78d338d10.png">
 <img width="529" alt="Screen Shot 2022-07-14 at 12 22 10 PM" src="https://user-images.githubusercontent.com/107531552/179030885-0399981c-4c68-4409-af8f-9dcc740829df.png">
@@ -27,6 +27,7 @@ This project is example for CRUD in ReactJS using Bootstrap 4 for framework css 
 
 
 ### Features:
+
 - User can see all the latest movies and tv shows.
 - User can search for movies
 - User can sign up on the website
@@ -36,25 +37,31 @@ This project is example for CRUD in ReactJS using Bootstrap 4 for framework css 
 - The site supports any screen size
 <img src="imdb-clone-screenshot.png" width="500" />
 
+
 # Screenshots:
 
 
 
 
 # What did I learn?
+
 How to use Next.js framework with React to build a CRUD application.
 
 # Biggest challenge:
+
 1. Deployment to Netlify and control flow with github.
 2. Trying to figure out Next.js.
 3. Trying to understand how different packages.
 4. Salvaging project after breaking it.
 5. Did I mention deployment?
 
-# Future ideas:
-Better styling and providing users in the community to add media and blog posts. No commenting due to the polarity of opinions on this topic, admin regulations may need to be enforced frequently. Maintain neutral platform thats informational not so much promotional are persuanding. A news tracker on the updates and trends in the culture of health and wellness via natural remedies as well as the legality status updates globally.
 
-# Get started... 
+# Future ideas:
+
+Make app more of a blog so that a community can be cultivated.
+Better styling and providing users in the community to add media and blog posts.
+
+
 
 
 
