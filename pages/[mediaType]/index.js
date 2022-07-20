@@ -16,7 +16,22 @@ import { shuffleArray } from "../../components/utilities";
 export default function MediaTypePage(props) {
 	const globalState = useStateContext();
 	const router = useRouter();
-	useEffect(() => {}, []);
+	
+	const showRandomMedia = () => {
+		let thumbType;
+		return props.genresData.map((item) => {
+		  thumbType = shuffleArray(globalState.thumbTypes)[0]
+		  return(
+			<div key={item.id}>
+			 
+			{showRandomMedia()}
+		  </div>
+		  )
+		})
+	  }
+	  console.log('props index', `/${props.query.mediaType}/${props.featuredData.id}`)
+
+	  
 	return AuthCheck(
 		<MainLayout>
 			<FeaturedMedia

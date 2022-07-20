@@ -14,6 +14,8 @@ export function HBOProvider({children}){
   const [accountModalOpen, setAccountModalOpenAction] = useState(false)
   const [searchOpen, setSearchOpenAction] = useState(false)
 
+  const thumbTypes = ['large-v', 'small-v', 'large-h', 'small-h']
+
   return(
     <StateContext.Provider
     value={{
@@ -25,7 +27,8 @@ export function HBOProvider({children}){
       accountModalOpen,
       setAccountModalOpenAction,
       searchOpen, 
-      setSearchOpenAction
+      setSearchOpenAction,
+      thumbTypes
     }}>
       {children}
     </StateContext.Provider>
