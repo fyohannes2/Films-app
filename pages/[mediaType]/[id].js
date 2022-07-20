@@ -34,26 +34,23 @@ export default function SingleMediaPage(props) {
 	return AuthCheck(
 		<MainLayout>
 			<FeaturedMedia
-				title={props.query.mediaType === 'movie' ? props.mediaData.title : props.mediaData.name}
-				mediaUrl={`https://image.tmdb.org/t/p/w1280${props.mediaData.backdrop_path}`}
-				location="In theaters and on HBO MAX. Streaming throughout May 23."
-				linkUrl="/movies/id"
-				type="single"
+			title={props.query.mediaType === 'movie' ? props.mediaData.title : props.mediaData.name}
+			mediaUrl={`https://image.tmdb.org/t/p/w1280${props.mediaData.backdrop_path}`}
+			location="In theaters and on HBO MAX. Streaming throughout May 23."
+			linkUrl="/movies/id"
+			type="single"
+		/>
+		<LazyLoad
+			offset={-400}
+			placeholder={<Placeholders title="Movies" type="large-v" />}>
+			<MediaRow
+				title="Similar To This"
+				type="small-v"
 				mediaType={props.query.mediaType}
-				mediaId={props.query.id}
-			/>
-			<LazyLoad
-				offset={-400}
-				placeholder={<Placeholders title="Movies" type="large-v" />}>
-				<MediaRow
-					updateData={props.query.id}
-					title="Similar To This"
-					type="small-v"
-					mediaType={props.query.mediaType}
 					endpoint={`${props.query.mediaType === 'movie' ? 'movie' : 'tv'}/${props.query.id}/similar?`}
 				/>
 			</LazyLoad>
-			<CastInfo mediaId={props.query.id} mediaType={props.query.mediaType} updateData={props.query.id}/>
+			<CastInfo mediaId={props.query.id} mediaType={props.mediaType}/>
 		</MainLayout>,
 	);
 }
