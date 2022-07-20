@@ -3,6 +3,8 @@
 This project is example for CRUD in ReactJS using Bootstrap 4 for framework css and design UI. On this project using axios for using http request to API. It uses [The MovieDB Api](https://www.themoviedb.org/documentation/api) to search for movies and display results.
 
 
+
+
 # Wireframe and Trello...
 
 <img width="948" alt="Screen Shot 2022-07-14 at 12 21 27 PM" src="https://user-images.githubusercontent.com/107531552/179030855-a4a4159e-3d5c-47ab-88bc-bab78d338d10.png">
@@ -33,6 +35,10 @@ This project is example for CRUD in ReactJS using Bootstrap 4 for framework css 
   - third party providers (Google, Facebook and Github)
 - The site supports any screen size
 <img src="imdb-clone-screenshot.png" width="500" />
+
+# Screenshots:
+
+
 
 
 # What did I learn?

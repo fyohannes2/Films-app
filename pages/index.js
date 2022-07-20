@@ -18,7 +18,7 @@ export default function Home() {
 			<FeaturedMedia
 				mediaUrl="https://www.youtube.com/embed/NYH2sLid0Zc?autoplay=1&loop=1&start=16"
 				title="Mortal Kombat"
-				location="In theaters and on HBO MAX. Streaming throughout May 23."
+				location="In theaters and on YourStream! Streaming throughout May 23."
 				linkUrl="/movie/460465"
 				type="front"
 				mediaType={'movie'}
