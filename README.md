@@ -4,6 +4,18 @@ Next.js is an open source React front-end development web framework that enables
 This project is example for CRUD in ReactJS using Bootstrap 4 for framework css and design UI. On this project used axios for using http request to API. It uses [The MovieDB Api](https://www.themoviedb.org/documentation/api) to search for movies and display results.
 
 
+# Screenshots:
+
+
+<img width="1440" alt="Screen Shot 2022-07-20 at 6 13 43 AM" src="https://user-images.githubusercontent.com/107531552/180025775-501d4cf1-4c39-4097-9f2c-f455b7228b24.png">
+<img width="1440" alt="Screen Shot 2022-07-20 at 6 13 57 AM" src="https://user-images.githubusercontent.com/107531552/180025789-d25ca4b2-c9e7-48d2-8e0f-5d505674b898.png">
+<img width="1440" alt="Screen Shot 2022-07-20 at 6 13 43 AM" src="https://user-images.githubusercontent.com/107531552/180025775-501d4cf1-4c39-4097-9f2c-f455b7228b24.png">
+<img width="1440" alt="Screen Shot 2022-07-20 at 6 13 57 AM" src="https://user-images.githubusercontent.com/107531552/180025789-d25ca4b2-c9e7-48d2-8e0f-5d505674b898.png">
+<img width="1426" alt="Screen Shot 2022-07-20 at 11 50 28 AM" src="https://user-images.githubusercontent.com/107531552/180027480-e53c3b26-fad5-4c22-ac12-cf255c0759b7.png">
+<img width="1426" alt="Screen Shot 2022-07-20 at 11 51 02 AM" src="https://user-images.githubusercontent.com/107531552/180027566-01ffdee7-c753-4791-960b-6d0560012a99.png">
+<img width="1426" alt="Screen Shot 2022-07-20 at 11 52 45 AM" src="https://user-images.githubusercontent.com/107531552/180027584-ed5c7ae5-c57a-4e8a-a540-cf75b78f0310.png">
+
+
 # Wireframe 
 
 
@@ -33,14 +45,6 @@ This project is example for CRUD in ReactJS using Bootstrap 4 for framework css 
   - email/pass created during sign up
   - third party providers (Google, Facebook and Github)
 - The site supports any screen size
-
-
-# Screenshots:
-
-
-<img width="1440" alt="Screen Shot 2022-07-20 at 6 13 43 AM" src="https://user-images.githubusercontent.com/107531552/180025775-501d4cf1-4c39-4097-9f2c-f455b7228b24.png">
-<img width="1440" alt="Screen Shot 2022-07-20 at 6 13 57 AM" src="https://user-images.githubusercontent.com/107531552/180025789-d25ca4b2-c9e7-48d2-8e0f-5d505674b898.png">
-
 
 
 
