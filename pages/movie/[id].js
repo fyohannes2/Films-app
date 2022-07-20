@@ -54,7 +54,7 @@ export default function SingleMediaPage(props) {
 	);
 }
 
-export async function getServerSideProps(context) {
+export function getServerSideProps(context) {
 	return {
 		props: { query: context.query }, // will be passed to the page component as props
 	};

@@ -57,7 +57,7 @@ export default function MediaTypePage(props) {
 	);
 }
 
-export async function getServerSideProps(context) {
+export function getServerSideProps(context) {
 	let genresData;
 	let featuredData;
 	try {

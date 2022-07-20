@@ -11,6 +11,8 @@ import Placeholders from "../../components/UI/Placeholders/PlaceHolders";
 import GenreNav from "../../components/UI/GenreNav/GenreNav";
 import axios from 'axios';
 import { shuffleArray } from "../../components/utilities";
+
+
 export default function MediaTypePage(props) {
 	const globalState = useStateContext();
 	const router = useRouter();
@@ -53,7 +55,7 @@ export default function MediaTypePage(props) {
 		</MainLayout>,
 	);
 }
-export async function getServerSideProps(context) {
+export function getServerSideProps(context) {
 	let genresData;
 	let featuredData;
 	try {

@@ -12,9 +12,9 @@ const SearchModal = (props) => {
  const [text, setText] = useState("");
  const router = useRouter();
 
- useEffect(async () => {
+ useEffect(() => {
 	try {
-		let popData = await axios.get(
+		let popData = axios.get(
 			`https://api.themoviedb.org/3/discover/movie?primary_release_year=2021&api_key=1db7688f317e15dd2ee2933dae838634&language=en-US`,
 		);
 		setPopData(popData.data.results.filter((item, i) => i < 14));

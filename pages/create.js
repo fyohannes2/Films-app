@@ -43,9 +43,9 @@ export default function CreateUser() {
     <div>
       <div className="create-user">
         <div className="create-user__top">
-          <div className="create-user__logo"/>
+          
           <span className="create-user__title">
-            Who Is Watching?
+            "YourStream": the app that personalizes your film library.
           </span>
         </div>
 

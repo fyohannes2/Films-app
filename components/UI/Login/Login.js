@@ -31,7 +31,6 @@ const Login = () => {
       return users.map((user) => {
         return(
           <div onClick={() => selectUser(user.id)} className="login-user__user-box" key={user.id}>
-            <img className="login-user__user-img" src="https://uifaces.co/our-content/donated/vIqzOHXj.jpg" />
             <div className="login-user__user-name">{user.user}</div>
           </div>
         )
@@ -45,9 +44,9 @@ const Login = () => {
   return (
       <div className="login-user">
         <div className="login-user__top">
-          <div className="login-user__logo"/>
+          
           <span className="login-user__title">
-            Who Is Watching?
+            "YMDB": Your movie database!
           </span>
         </div>
 

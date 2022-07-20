@@ -58,10 +58,10 @@ export default function SingleMediaPage(props) {
 	);
 }
 
-export async function getServerSideProps(context) {
+export function getServerSideProps(context) {
 	let mediaData;
 	try{
-		mediaData = await axios.get(`https://api.themoviedb.org/3/${context.query.mediaType}/${context.query.id}?api_key=1db7688f317e15dd2ee2933dae838634&language=en-US`)
+		mediaData = axios.get(`https://api.themoviedb.org/3/${context.query.mediaType}/${context.query.id}?api_key=1db7688f317e15dd2ee2933dae838634&language=en-US`)
 	} catch(error) {
 		console.log(error)
 	}
