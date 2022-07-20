@@ -14,7 +14,7 @@ const AuthCheck = (component) => {
     // if(users.length >= 1) {
     //   router.push('/login')
     // }
-    if( activeUID === null || users.length < 1) {
+    if( activeUID === null && users.length < 1) {
       router.push('/create')
     }
   }, [])
@@ -40,4 +40,4 @@ const AuthCheck = (component) => {
   return component
 }
 
-export default AuthCheck;
+export default AuthCheck; 
