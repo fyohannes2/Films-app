@@ -27,7 +27,6 @@ export default function MediaTypePage(props) {
           offset={-200}
           placeholder={<Placeholders title={item.name} type={thumbType}  />}>
           <MediaRow
-						updateData={props.query.genre_id}
             title={item.name}
             type={thumbType}
             endpoint={`discover/${props.query.mediaType}?with_genres=${props.query.genre_id}&sort_by=popularity.desc&primary_release_year=2021&page=${index + 1}`}
@@ -43,17 +42,15 @@ export default function MediaTypePage(props) {
 			<FeaturedMedia
 				mediaUrl={`https://image.tmdb.org/t/p/w1280${props.featuredData.backdrop_path}`}
 				title={props.query.mediaType === 'movie' ? props.featuredData.title : props.featuredData.name}
-				
+
 				linkUrl={`/${props.query.mediaType}/${props.featuredData.id}`}
 				type="single"
-				mediaType={props.query.mediaType}
-				mediaId={props.featuredData.id}
 			/>
-      <GenreNav mediaType={props.query.mediaType} genresData={props.genresData} />
+      <GenreNav mediaType={props.query.MediaType} genresData={props.genresData} />
 
 			{showRandomMedia()}
 
-			
+
 		</MainLayout>,
 	);
 }
@@ -82,4 +79,3 @@ export async function getServerSideProps(context) {
 		}, // will be passed to the page component as props
 	};
 }
-
