@@ -1,26 +1,32 @@
 import Head from "next/head";
 import { useEffect } from "react";
-import { useStateContext } from "../components/HBOProvider";
+import { useStateContext } from "../../components/HBOProvider";
 import { useRouter } from "next/router";
-import MainLayout from "../components/Layouts/MainLayout";
-import FeaturedMedia from "../components/UI/FeaturedMedia/FeaturedMedia";
-import MediaRow from "../components/UI/MediaRow/MediaRow";
-import AuthCheck from "../components/AuthCheck";
+import MainLayout from "../../components/Layouts/MainLayout";
+import FeaturedMedia from "../../components/UI/FeaturedMedia/FeaturedMedia";
+import MediaRow from "../../components/UI/MediaRow/MediaRow";
+import AuthCheck from "../../components/AuthCheck";
 import LazyLoad from "react-lazyload";
-import Placeholders from "../components/UI/Placeholders/PlaceHolders";
-export default function Home() {
+import Placeholders from "../../components/UI/Placeholders/PlaceHolders";
+import GenreNav from "../../components/UI/GenreNav/GenreNav";
+import axios from 'axios';
+import { shuffleArray } from "../../components/utilities";
+
+
+export default function MediaTypePage(props) {
 	const globalState = useStateContext();
 	const router = useRouter();
 	useEffect(() => {}, []);
 	return AuthCheck(
 		<MainLayout>
 			<FeaturedMedia
-				mediaUrl="https://www.youtube.com/embed/NYH2sLid0Zc?autoplay=1&loop=1&start=16"
-				title="Mortal Kombat"
-				location="In theaters and on HBO MAX. Streaming throughout May 23."
-				linkUrl="/movie/460465"
-				type="front"
+				mediaUrl={`https://image.tmdb.org/t/p/w1280${props.featuredData.backdrop_path}`}
+				title={props.query.mediaType === 'movie' ? props.featuredData.title : props.featuredData.name}
+
+				linkUrl={`/${props.query.mediaType}/${props.featuredData.id}`}
+				type="single"
 			/>
+      <GenreNav mediaType={props.query.MediaType} genresData={props.genresData} />
 			<LazyLoad
 				offset={-400}
 				placeholder={<Placeholders title="Movies" type="large-v" />}>
@@ -31,52 +37,32 @@ export default function Home() {
 				/>
 			</LazyLoad>
 
-			<LazyLoad
-				offset={-400}
-				placeholder={<Placeholders title="Series" type="small-h" />}>
-				<MediaRow
-					title="Series"
-					mediaType="series"
-					type="small-h"
-					endpoint="discover/tv?primary_release_year=2021"
-				/>
-			</LazyLoad>
-			<LazyLoad
-				offset={-400}
-				placeholder={<Placeholders title="Movies" type="small-v" />}>
-				<MediaRow
-					title="Action"
-					type="small-v"
-					endpoint="discover/movie?with_genres=28&primary_release_year=2021"
-				/>
-			</LazyLoad>
-			<LazyLoad
-				offset={-400}
-				placeholder={<Placeholders title="Movies" type="small-v" />}>
-				<MediaRow
-					title="Horror"
-					type="small-v"
-					endpoint="discover/movie?with_genres=27&primary_release_year=2021"
-				/>
-			</LazyLoad>
-			<LazyLoad
-				offset={-400}
-				placeholder={<Placeholders title="Movies" type="large-h" />}>
-				<MediaRow
-					title="Animations"
-					type="large-h"
-					endpoint="discover/movie?with_genres=16&primary_release_year=2021"
-				/>
-			</LazyLoad>
-			<LazyLoad
-				offset={-400}
-				placeholder={<Placeholders title="Movies" type="large-v" />}>
-				<MediaRow
-					title="Sci-fi"
-					type="small-v"
-					endpoint="discover/movie?with_genres=878&primary_release_year=2021"
-				/>
-			</LazyLoad>
+
 		</MainLayout>,
 	);
+}
+
+export async function getServerSideProps(context) {
+	let genresData;
+	let featuredData;
+	try {
+		genresData = await axios.get(
+			`https://api.themoviedb.org/3/genre/${context.query.mediaType}/list?api_key=1db7688f317e15dd2ee2933dae838634&language=en-US`,
+		);
+		featuredData = await axios.get(
+			`https://api.themoviedb.org/3/discover/${context.query.mediaType}?primary_release_year=2021&api_key=1db7688f317e15dd2ee2933dae838634&language=en-US`,
+		);
+		console.log("genresData");
+		console.log(genresData.data);
+	} catch (error) {
+		console.log("error");
+		console.log(error);
+	}
+	return {
+		props: {
+			genresData: genresData.data.genres,
+			featuredData: shuffleArray(featuredData.data.results)[0],
+			query: context.query,
+		}, // will be passed to the page component as props
+	};
 }
